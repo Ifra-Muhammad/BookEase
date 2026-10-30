@@ -1,15 +1,12 @@
 
-/* =====================================
-   1. SEARCH AND CATEGORY FILTER
-   ===================================== */
 
 // HTML elements ko select karna
 const searchInput = document.getElementById("searchInput");
 const categoryFilter = document.getElementById("categoryFilter");
-const serviceCards = document.querySelectorAll(".service-card");
+const serviceCards = document.querySelectorAll(".service-card");//all se sare cards seelect hunge
 const noResults = document.getElementById("noResults");
 
-// Search aur category ke mutabiq services dikhana
+// Search aur category ke mutabiq services dikhengi
 function filterServices() {
   const searchText = searchInput.value.toLowerCase().trim();
   const selectedCategory = categoryFilter.value;
@@ -45,10 +42,6 @@ searchInput.addEventListener("input", filterServices);
 categoryFilter.addEventListener("change", filterServices);
 
 
-/* =====================================
-   2. MOBILE HAMBURGER MENU
-   ===================================== */
-
 const menuToggle = document.getElementById("menuToggle");
 const mainNavbar = document.getElementById("mainNavbar");
 
@@ -76,9 +69,7 @@ mainNavbar.querySelectorAll("a").forEach(function (link) {
 });
 
 
-/* =====================================
-   3. BOOKING FORM AND VALIDATION
-   ===================================== */
+// booking form ki validation
 
 const bookingForm = document.getElementById("bookingForm");
 
@@ -86,7 +77,7 @@ if (bookingForm) {
   const bookingMessage = document.getElementById("bookingMessage");
   const bookingDate = document.getElementById("bookingDate");
 
-  // Aaj ki date lena, taake past date select na ho
+  // sirf aj ki ya agay ki dates select kersakte he past me nhi 
   function getToday() {
     const today = new Date();
     const year = today.getFullYear();
@@ -98,7 +89,7 @@ if (bookingForm) {
 
   bookingDate.min = getToday();
 
-  // Form submit hone par validation chalana
+  // Form submit hone par validation chalaga
   bookingForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -110,7 +101,7 @@ if (bookingForm) {
     const date = bookingDate.value;
     const time = document.getElementById("bookingTime").value;
 
-    // Error messages clear karna
+    // Error messages clear karna k liye
     document.querySelectorAll(".error-message").forEach(function (error) {
       error.textContent = "";
     });
@@ -215,13 +206,11 @@ if (bookingForm) {
       return;
     }
 
-    /* =====================================
-       4. BOOKING CONFIRMATION SUMMARY
-       ===================================== */
+   
 
-    // Summary ko safely create karna
-    // textContent user ki input ko HTML ki tarah run nahi karta
-    const heading = document.createElement("h3");
+    
+    // textContent user ki input ko HTML ki tarah run nahi karta tectcontent mtlb text ki tarh treat huga innerhtml se html apply hugi or wo nhi kerni he 
+     const heading = document.createElement("h3");
     heading.textContent = "Booking Confirmed!";
 
     const message = document.createElement("p");
@@ -251,15 +240,15 @@ if (bookingForm) {
       details.appendChild(row);
     });
 
-    // Purana message replace karke complete summary show karna
+    // Purana message replace karke complete summary show huga
     bookingMessage.replaceChildren(heading, message, details);
     bookingMessage.classList.remove("booking-error");
     bookingMessage.hidden = false;
 
-    // Form clear karna, confirmation ko screen par rehne dena
+    
     bookingForm.reset();
 
-    // Date ki minimum limit dobara set karna
+   
     bookingDate.min = getToday();
   });
 }

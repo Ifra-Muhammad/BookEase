@@ -248,7 +248,31 @@ if (bookingForm) {
     
     bookingForm.reset();
 
+    
+
    
     bookingDate.min = getToday();
   });
 }
+
+
+// Back to Top Button
+const backToTop = document.getElementById("backToTop");
+
+// jab scrool kerer tu tab show hu button
+window.addEventListener("scroll", function () {
+  if (window.scrollY > 300) {
+    backToTop.classList.add("show");
+  } else {
+    backToTop.classList.remove("show");
+  }
+});
+
+// Scroll smoothly 
+backToTop.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+

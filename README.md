@@ -20,6 +20,7 @@ The project includes:
 - A booking form for entering customer details.
 - Basic client-side form validation.
 - A booking confirmation summary after successful form submission.
+-  Back to Top button with smooth scrolling, allowing users to quickly return to the top of the page.
 
 **Project Limitation:** This is a frontend-only project. It does not include a backend, database, payment system, or real appointment management.
 

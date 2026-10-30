@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookEase Home Services</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <a href="#home" class="logo">BookEase</a>
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="mainNavbar"
+    >☰</button>
+
+    <nav class="navbar" id="mainNavbar" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#booking">Booking</a>
+    </nav>
+
+    <a href="#booking" class="header-btn">Book Now</a>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="tagline">YOUR HOME, OUR CARE</p>
+        <h1>Book Trusted Home Services With Ease</h1>
+        <p class="hero-description">
+          Find reliable professionals for your everyday home needs.
+          Simple booking, trusted service, and more peace of mind.
+        </p>
+        <a href="#services" class="primary-btn">Explore Services</a>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=800&q=80"
+          alt="Professional cleaning service"
+        >
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+      <p class="tagline">WHAT WE OFFER</p>
+      <h2>Our Home Services</h2>
+      <p class="section-description">
+        Choose the service you need and let us take care of the rest.
+      </p>
+
+      <!-- Search and Category Filter -->
+      <div class="service-controls">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search services..."
+          aria-label="Search services"
+        >
+
+        <select id="categoryFilter" aria-label="Filter by category">
+          <option value="all">All Services</option>
+          <option value="cleaning">Cleaning</option>
+          <option value="plumbing">Plumbing</option>
+          <option value="electrical">Electrical</option>
+          <option value="ac">AC Service</option>
+        </select>
+      </div>
+
+      <p id="noResults" role="status" hidden>
+        No services found. Try another search.
+      </p>
+
+      <!-- Service Cards -->
+      <div class="services-grid" id="servicesGrid">
+        <article class="service-card" data-category="cleaning">
+          <div class="service-icon"></div>
+          <h3>Home Cleaning</h3>
+          <p class="service-description">
+            Keep your home fresh, tidy, and comfortable.
+          </p>
+          <p class="price">From PKR 1500</p>
+        </article>
+
+        <article class="service-card" data-category="plumbing">
+          <div class="service-icon"></div>
+          <h3>Plumbing</h3>
+          <p class="service-description">
+            Get help with common taps and pipe issues.
+          </p>
+          <p class="price">From PKR 1200</p>
+        </article>
+
+        <article class="service-card" data-category="electrical">
+          <div class="service-icon"></div>
+          <h3>Electrical Repair</h3>
+          <p class="service-description">
+            Get help with everyday electrical problems.
+          </p>
+          <p class="price">From PKR 1000</p>
+        </article>
+
+        <article class="service-card" data-category="ac">
+          <div class="service-icon"></div>
+          <h3>AC Service</h3>
+          <p class="service-description">
+            Keep your air conditioner clean and working well.
+          </p>
+          <p class="price">From PKR 2000</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- form k liye code -->
+    <section class="booking-section" id="booking">
+      <p class="tagline">BOOK YOUR SERVICE</p>
+      <h2>Make a Booking</h2>
+      <p class="section-description">
+        Fill in the details below to request your home service.
+      </p>
+
+      <form id="bookingForm" class="booking-form" novalidate>
+        <div class="form-group">
+          <label for="customerName">Full Name</label>
+          <input
+            type="text"
+            id="customerName"
+            name="customerName"
+            placeholder="Enter your full name"
+            required
+          >
+          <small class="error-message" id="nameError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="customerPhone">Phone Number</label>
+          <input
+            type="tel"
+            id="customerPhone"
+            name="customerPhone"
+            placeholder="Enter your phone number"
+            required
+          >
+          <small class="error-message" id="phoneError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="customerEmail">Email Address</label>
+          <input
+            type="email"
+            id="customerEmail"
+            name="customerEmail"
+            placeholder="Enter your email"
+            required
+          >
+          <small class="error-message" id="emailError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="bookingService">Select Service</label>
+          <select id="bookingService" name="bookingService" required>
+            <option value="">Choose a service</option>
+            <option value="Home Cleaning">Home Cleaning</option>
+            <option value="Plumbing">Plumbing</option>
+            <option value="Electrical Repair">Electrical Repair</option>
+            <option value="AC Service">AC Service</option>
+          </select>
+          <small class="error-message" id="serviceError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="bookingDate">Preferred Date</label>
+          <input
+            type="date"
+            id="bookingDate"
+            name="bookingDate"
+            required
+          >
+          <small class="error-message" id="dateError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="bookingTime">Preferred Time</label>
+          <select id="bookingTime" name="bookingTime" required>
+            <option value="">Choose a time</option>
+            <option value="Morning">Morning</option>
+            <option value="Afternoon">Afternoon</option>
+            <option value="Evening">Evening</option>
+          </select>
+          <small class="error-message" id="timeError"></small>
+        </div>
+
+        <button type="submit" class="primary-btn booking-submit">
+          Confirm Booking
+        </button>
+
+        <p id="bookingMessage" role="status" aria-live="polite" hidden></p>
+      </form>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us" id="why-us">
+      <h2>Why Choose BookEase?</h2>
+
+      <div class="benefits">
+        <div class="benefit">
+          <h3>Trusted Professionals</h3>
+          <p>Service details are clear and easy to understand.</p>
+        </div>
+
+        <div class="benefit">
+          <h3>Easy Booking</h3>
+          <p>Choose your service without a complicated process.</p>
+        </div>
+
+        <div class="benefit">
+          <h3>Convenient Service</h3>
+          <p>Pick a preferred date in our booking process.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 BookEase. Week 1 project prototype.</p>
+  </footer>
+  <script src="script.js" defer></script>
+
+</body>
+</html>
+

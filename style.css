@@ -1,0 +1,608 @@
+
+:root {
+  --teal: #176B67;
+  --dark-teal: #104E4B;
+  --light-teal: #DDEFEA;
+  --cream: #FAF7EF;
+  --white: #FFFFFF;
+  --text-color: #263B39;
+  --border-color: #E0E9E5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--dark-teal);
+  line-height: 1.3;
+}
+
+p {
+  margin-bottom: 12px;
+}
+
+/*  Header ko design kre ge  */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 8%;
+  background-color: var(--white);
+}
+
+.logo {
+  color: var(--dark-teal);
+  font-size: 26px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navbar a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: var(--teal);
+}
+
+.header-btn,
+.primary-btn {
+  display: inline-block;
+  background-color: var(--teal);
+  color: var(--white);
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease,
+              transform 0.3s ease;
+}
+
+.header-btn:hover,
+.primary-btn:hover {
+  background-color: var(--dark-teal);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Hero ssection  */
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 65px 8%;
+  background-color: var(--light-teal);
+  border-radius: 0 0 24px 24px;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.tagline {
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.hero h1 {
+  font-size: clamp(32px, 4vw, 48px);
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  max-width: 520px;
+  margin-bottom: 26px;
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-image img {
+  display: block;
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+/*Services Section  */
+
+.services-section {
+  padding: 65px 8%;
+  text-align: center;
+}
+
+.services-section h2,
+.why-us h2 {
+  font-size: 32px;
+  margin-bottom: 14px;
+}
+
+.section-description {
+  margin-bottom: 32px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 30px;
+  text-align: left;
+}
+
+.service-card {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 24px 20px;
+  box-shadow: 0 4px 14px rgba(16, 78, 75, 0.05);
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease;
+  cursor: pointer;
+  /* cursor jab card k opr ayga tu shape badle gi isse */
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(23, 107, 103, 0.15);
+}
+
+.service-icon {
+  font-size: 34px;
+  margin-bottom: 14px;
+}
+
+.service-card h3 {
+  color: var(--teal);
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  font-size: 14px;
+}
+
+.service-card .price {
+  color: var(--dark-teal);
+  font-weight: bold;
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+
+/* Why Choose Us */
+
+.why-us {
+  background-color: var(--light-teal);
+  padding: 55px 8%;
+  text-align: center;
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.benefit {
+  background-color: var(--white);
+  padding: 25px 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.benefit h3 {
+  color: var(--teal);
+  margin-bottom: 12px;
+}
+
+.benefit p {
+  margin-bottom: 0;
+}
+
+/*  Footer  */
+
+.footer {
+  background-color: var(--dark-teal);
+  color: var(--white);
+  text-align: center;
+  padding: 24px 8%;
+}
+
+.footer p {
+  margin-bottom: 0;
+}
+
+/* Tablet Responsive Layout   */
+
+@media (max-width: 900px) {
+  .hero {
+    gap: 25px;
+    padding: 50px 6%;
+  }
+
+  .services-section,
+  .why-us {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* mobile responsive */
+
+@media (max-width: 600px) {
+  .header {
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 18px 5%;
+  }
+
+  .logo {
+    font-size: 23px;
+  }
+
+  .navbar {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 22px;
+  }
+
+  .header-btn {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 38px 5%;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero-image img {
+    max-height: 280px;
+  }
+
+  .services-section,
+  .why-us {
+    padding: 42px 5%;
+  }
+
+  .services-section h2,
+  .why-us h2 {
+    font-size: 27px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .benefits {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/*Search and Category Filter  */
+
+.service-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  max-width: 650px;
+  margin: 28px auto 35px;
+}
+
+#searchInput {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background-color: var(--white);
+  color: var(--text-color);
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+#searchInput:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(23, 107, 103, 0.12);
+}
+
+#searchInput::placeholder {
+  color: #687C77;
+}
+
+#categoryFilter {
+  padding: 13px 35px 13px 14px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background-color: var(--white);
+  color: var(--dark-teal);
+  font-size: 14px;
+  font-family: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+}
+
+#categoryFilter:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(23, 107, 103, 0.12);
+}
+
+#noResults {
+  max-width: 650px;
+  margin: 20px auto;
+  padding: 18px;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background-color: var(--white);
+  color: var(--dark-teal);
+  text-align: center;
+}
+
+/* Mobile Search Layout */
+
+@media (max-width: 600px) {
+  .service-controls {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin: 24px auto 30px;
+  }
+
+  #searchInput,
+  #categoryFilter {
+    width: 100%;
+    min-height: 46px;
+  }
+}
+
+/* Hamburger Menu mobile per hamburger show huga or click kere per details aye gi */
+
+.menu-toggle {
+  display: none;
+  background-color: var(--teal);
+  color: var(--white);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 25px;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .header {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .header-btn {
+    order: 2;
+  }
+
+  .navbar {
+    display: none;
+    order: 4;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 8px 0;
+    background-color: var(--white);
+  }
+
+  .navbar.menu-open {
+    display: flex;
+  }
+
+  .navbar a {
+    padding: 12px;
+    border-radius: 6px;
+  }
+
+  .navbar a:hover {
+    background-color: var(--light-teal);
+  }
+}
+
+/* Booking Form style k liye  */
+
+.booking-section {
+  padding: 70px 8%;
+  background-color: var(--light-teal);
+  text-align: center;
+}
+
+.booking-section h2 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.booking-section .section-description {
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+.booking-form {
+  max-width: 700px;
+  margin: 30px auto 0;
+  padding: 34px;
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  box-shadow: 0 12px 35px rgba(16, 78, 75, 0.10);
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: var(--dark-teal);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  border: 1px solid #C5D5D1;
+  border-radius: 10px;
+  background-color: #FCFEFD;
+  color: var(--text-color);
+  font: inherit;
+
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease,
+              background-color 0.2s ease;
+}
+
+.form-group input:hover,
+.form-group select:hover {
+  border-color: var(--teal);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: 3px solid rgba(23, 107, 103, 0.18);
+  outline-offset: 1px;
+  border-color: var(--teal);
+  background-color: var(--white);
+}
+
+.form-group input::placeholder {
+  color: #687C77;
+}
+
+.error-message {
+  color: #B42318;
+  font-size: 13px;
+  min-height: 16px;
+}
+
+.booking-submit,
+#bookingMessage {
+  grid-column: 1 / -1;
+}
+
+.booking-submit {
+  justify-self: start;
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 10px;
+}
+
+#bookingMessage {
+  padding: 18px;
+  border: 1px solid #B9DDD3;
+  border-radius: 12px;
+  background-color: var(--light-teal);
+  color: var(--dark-teal);
+  line-height: 1.7;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+#bookingMessage.booking-error {
+  background-color: #FFF0EF;
+  border-color: #F2C4C0;
+  color: #B42318;
+}
+
+/* Keyboard Focus Accessibility  yani jispr abhi ham likh rahe wo thura highligted hu usko focus kehte he */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--dark-teal);
+  outline-offset: 3px;
+}
+
+/* Booking Form Mobile Layot */
+
+@media (max-width: 600px) {
+  .booking-section {
+    padding: 45px 5%;
+  }
+
+  .booking-section h2 {
+    font-size: 27px;
+  }
+
+  .booking-form {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 22px 18px;
+    border-radius: 16px;
+  }
+
+  .booking-submit {
+    width: 100%;
+    text-align: center;
+  }
+}
